@@ -27,7 +27,7 @@ const LoginPage: React.FC = () => {
 
       if (response.status == 200) {
         localStorage.setItem("access_token", response.data.access_token);
-        navigate("/map-view");
+        navigate("/dashboard");
       } else {
         setError(response.data.message || "Username atau password salah!");
       }
@@ -106,6 +106,7 @@ const LoginPage: React.FC = () => {
             Daftar di sini
           </Link>
         </p>
+        
       </div>
     </div>
   );

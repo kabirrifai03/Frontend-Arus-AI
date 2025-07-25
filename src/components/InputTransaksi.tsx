@@ -146,6 +146,7 @@ const handleReadExcel = async (file: File) => {
       setTimeout(() => {
         setLoading(false);
         onClose();
+        window.location.reload();
       }, 1500);
     } catch (err) {
       console.error("Gagal menyimpan transaksi", err);
@@ -238,7 +239,7 @@ const handleReadExcel = async (file: File) => {
                     value={item.amount}
                     onChange={(e) => handleItemChange(i, "amount", e.target.value)}
                     placeholder="Harga"
-                    className="w-32 pl-10 pr-2 py-2 border rounded"
+                    className="w-40 pl-10 pr-2 py-2 border rounded"
                     required
                     disabled={fromExcel}
                 />

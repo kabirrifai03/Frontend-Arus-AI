@@ -1,20 +1,21 @@
 // src/components/Sidebar.tsx
 import React, { useState } from "react";
-import { FaHome, FaUser, FaBell, FaFileAlt, FaSignOutAlt } from "react-icons/fa";
+import { FaHome, FaUser, FaBell, FaFileAlt, FaSignOutAlt, FaSchool } from "react-icons/fa";
 import { NavLink, useNavigate } from "react-router-dom";
 import Modal from "./Modal"; // pastikan ini ada
 import Button from "./Button"; // pastikan ini ada juga
 
+
 const Sidebar: React.FC = () => {
   const navigate = useNavigate();
+
 
   const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false);
 
   const menu = [
     { name: "Dashboard", icon: <FaHome />, to: "/dashboard" },
-    { name: "Pengajuan Kredit", icon: <FaFileAlt />, to: "/pengajuan" },
-    { name: "Nasabah", icon: <FaUser />, to: "/nasabah" },
-    { name: "Notifikasi", icon: <FaBell />, to: "/notifikasi" },
+    { name: "Nasabah", icon: <FaUser />, to: "/ProfileNasabah" },
+    { name: "Akademi Arus", icon: <FaSchool />, to: "/akademiarus" },
   ];
 
   const handleConfirmLogout = () => {
@@ -25,9 +26,14 @@ const Sidebar: React.FC = () => {
 
   return (
     <>
-      <aside className="h-screen w-64 bg-white border-r shadow-md fixed left-0 top-0 z-50">
+      <aside className="h-screen w-64 bg-white border-r shadow-md fixed left-0 top-0 ">
         <div className="flex items-center justify-center h-16 border-b">
-          <h1 className="text-xl font-bold text-blue-700">ARUS AI</h1>
+          <img
+              src="https://i.imgur.com/l82Pfyy.png"
+              alt="Arus AI Logo"
+              className="h-10"
+            />
+          <h1 className="text-xl font-bold text-blue-700 ml-2">ARUS AI</h1>
         </div>
         <nav className="mt-4">
           <ul className="flex flex-col gap-2 p-4">

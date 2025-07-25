@@ -18,7 +18,16 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": ".", // Tambahkan baris ini
+    "paths": {      // Tambahkan blok ini
+      "@/components/*": ["./src/components/*"],
+      "@/lib/*": ["./src/lib/*"], // Jika ada folder lib di src
+      "@/hooks/*": ["./src/hooks/*"], // Jika ada folder hooks di src
+      "@/pages/*": ["./src/pages/*"], // Mungkin Anda ingin membuat alias untuk pages juga
+      "@/context/*": ["./src/context/*"], // Alias untuk context
+      "@/*": ["./src/*"] // Alias umum untuk setiap folder di dalam 'src'
+    }
   },
   "include": [
     "src"
